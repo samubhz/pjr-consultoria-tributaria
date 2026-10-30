@@ -37,3 +37,7 @@ A página foi escrita sem preço, sem "grátis", sem promessa de resultado e sem
 - FAQ abre e fecha com transição de altura (Chrome/Edge/Safari recentes; nos demais, abre sem animação).
 - Cabeçalho ganha sombra ao rolar e o botão do WhatsApp aparece depois de rolar a página.
 - Só `transform` e `opacity` são animados. Para quem ativa "reduzir movimento" no sistema, nenhuma animação roda e o conteúdo aparece direto. Sem JavaScript, o conteúdo também aparece normalmente.
+
+## Auditoria de SEO (30/10/2026)
+Aplicado: título (50 car.) e descrição (151 car.) dentro do limite; palavra-chave "Reforma Tributária" no H1; glossário com 8 termos (+ DefinedTermSet); FAQPage, WebPage e catálogo de serviços no JSON-LD; hreflang; fonte carregada sem bloquear a renderização; imagens em WebP (de 2,0 MB para 1,2 MB); páginas `privacidade.html` e `404.html`; sitemap com lastmod.
+Ainda depende de você: endereço e CNPJ/razão social (para dados locais e Google Meu Negócio), domínio próprio, Search Console e artigos de blog (ver recomendações).
