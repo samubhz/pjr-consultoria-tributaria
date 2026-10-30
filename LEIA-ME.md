@@ -44,3 +44,8 @@ Ainda depende de você: endereço e CNPJ/razão social (para dados locais e Goog
 
 ## Artigos (blog)
 Pasta `artigos/` com a listagem e 6 artigos (split payment, cClassTrib, construção civil e contratos, créditos de PIS e Cofins, transporte de cargas e apuração assistida). Estilo em `assets/blog.css`. Para criar novos artigos, copie um arquivo existente, troque título, descrição, `canonical`, conteúdo e o JSON-LD, e acrescente a URL em `sitemap.xml` e o cartão na home. Mantenha o tom informativo (sem preço, promessa de resultado ou chamadas de captação) e revise na OAB.
+
+## Fontes, PDF e atalhos (30/10/2026)
+- **Fonte própria:** Carlito (equivalente ao Calibri) em `assets/fonts/`, em WOFF2 reduzido (~40 KB cada). O site não chama mais o Google Fonts (mais rápido e sem dados enviados a terceiros). Licença: SIL OFL, ver `assets/fonts/LEIA-ME.txt`.
+- **Checklist em PDF:** `checklist-reforma-tributaria-PJR.pdf` (2 páginas, identidade da PJR). Está ligado ao cartão de pontuação do checklist, ao rodapé e aos artigos. Se mudar as perguntas do checklist, o PDF precisa ser refeito.
+- **WhatsApp por página:** nos artigos, o botão flutuante já leva uma mensagem com o título do artigo. Há também botões de compartilhar (WhatsApp, LinkedIn e copiar link).

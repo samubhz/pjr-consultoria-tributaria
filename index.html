@@ -30,11 +30,9 @@
 <meta name="twitter:description" content="Reforma Tributária (IBS e CBS): o que muda, os prazos e um checklist para preparar a sua empresa.">
 <meta name="twitter:image" content="https://samubhz.github.io/pjr-consultoria-tributaria/assets/og-image.jpg">
 
+<link rel="preload" href="assets/fonts/carlito-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/carlito-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="assets/biblioteca.webp" fetchpriority="high">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&display=swap"></noscript>
 
 <script type="application/ld+json">
 {
@@ -288,6 +286,9 @@
 
 <script>if(!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches))document.documentElement.classList.add("js")</script>
 <style>
+@font-face{font-family:Carlito;font-style:normal;font-weight:400;font-display:swap;src:local("Calibri"),url(assets/fonts/carlito-400.woff2) format("woff2")}
+@font-face{font-family:Carlito;font-style:normal;font-weight:700;font-display:swap;src:local("Calibri Bold"),url(assets/fonts/carlito-700.woff2) format("woff2")}
+@font-face{font-family:Carlito;font-style:italic;font-weight:400;font-display:swap;src:local("Calibri Italic"),url(assets/fonts/carlito-400-italic.woff2) format("woff2")}
 :root{
   --green:#1F4C4E; --green-deep:#0F2B2A; --green-mid:#2E8B84; --teal:#3F7A78;
   --gold:#B8893A; --gold-bright:#D9AE5B; --gold-ink:#7A5A1C;
@@ -841,7 +842,8 @@ footer a{text-decoration:none}footer a:hover{color:var(--gold-bright)}
           <div class="ring" id="ring"><div><span><b id="sc">0</b><span>de 15</span></span></div></div>
           <h3 id="sc-t">Comece marcando os itens</h3>
           <p id="sc-p">Cada item marcado representa uma frente já organizada na sua empresa.</p>
-          <button class="btn btn-primary" type="button" onclick="window.print()"><svg class="icon"><use href="#i-print"/></svg>Imprimir ou salvar em PDF</button>
+          <a class="btn btn-primary" href="checklist-reforma-tributaria-PJR.pdf" download><svg class="icon"><use href="#i-print"/></svg>Baixar o checklist em PDF</a>
+          <button class="btn btn-ghost" type="button" onclick="window.print()" style="margin-top:10px">Imprimir esta seção</button>
           <a class="btn btn-ghost" href="#contato" style="margin-top:10px">Conversar sobre os resultados</a>
         </div>
         <p class="note rv">Este checklist é material informativo, genérico e não constitui consultoria nem parecer. A situação de cada empresa exige análise individual.</p>
@@ -1012,7 +1014,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--gold-bright)}
         <img src="assets/logo-pjr-white.png" alt="PJR Consultoria Tributária" width="104" height="54" loading="lazy">
         <p>Consultoria tributária voltada à decisão: entender a operação, desenhar os caminhos e implantá-los com segurança.</p>
       </div>
-      <div><h4>Navegação</h4><ul><li><a href="#o-que-muda">O que muda</a></li><li><a href="#checklist">Checklist</a></li><li><a href="#servicos">Áreas de atuação</a></li><li><a href="#glossario">Glossário</a></li><li><a href="artigos/">Artigos</a></li><li><a href="#faq">Perguntas frequentes</a></li><li><a href="#contato">Contato</a></li><li><a href="privacidade.html">Política de privacidade</a></li></ul></div>
+      <div><h4>Navegação</h4><ul><li><a href="#o-que-muda">O que muda</a></li><li><a href="#checklist">Checklist</a></li><li><a href="#servicos">Áreas de atuação</a></li><li><a href="#glossario">Glossário</a></li><li><a href="artigos/">Artigos</a></li><li><a href="#faq">Perguntas frequentes</a></li><li><a href="#contato">Contato</a></li><li><a href="checklist-reforma-tributaria-PJR.pdf" download>Checklist em PDF</a></li><li><a href="privacidade.html">Política de privacidade</a></li></ul></div>
       <div><h4>Contato</h4><ul><li><a href="mailto:reinaldo@pauloteodoro.adv.br">reinaldo@pauloteodoro.adv.br</a></li><li><a href="tel:+5531987228207">(31) 98722-8207</a></li><li>Reinaldo Lage · OAB/MG 106.499</li></ul></div>
     </div>
     <div class="legal">

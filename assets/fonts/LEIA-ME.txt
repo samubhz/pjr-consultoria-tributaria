@@ -1,0 +1,3 @@
+Fonte Carlito (Regular, Bold e Italic), métrica compatível com Calibri.
+Copyright (c) Lukasz Dziedzic. Licenciada sob a SIL Open Font License 1.1 (https://openfontlicense.org).
+Pode ser usada, copiada e redistribuída livremente, inclusive em sites comerciais.
