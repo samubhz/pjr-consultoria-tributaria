@@ -53,3 +53,6 @@ Pasta `artigos/` com a listagem e 6 artigos (split payment, cClassTrib, constru�
 ## Botões de compartilhar na página principal
 Aparecem em 4 momentos: abaixo do cronograma ("Envie o cronograma a um colega"), ao lado do checklist ("Indique o checklist"), em uma faixa depois das dúvidas ("Conhece alguém que também precisa se preparar?") e no rodapé. Cada um monta a mensagem com o endereço atual do site (funciona também com domínio próprio) e abre WhatsApp, LinkedIn ou copia o link; em celulares aparece o botão "Compartilhar" do próprio aparelho.
 Importante (OAB): não ofereça brinde, desconto ou vantagem por indicação. Isso poderia ser entendido como captação de clientela.
+
+## Ícone da aba (favicon)
+Gerado a partir do logo vetorial: `assets/favicon.svg` (nítido em qualquer tamanho), `favicon.ico`, PNGs de 32, 192 e 512 px, `apple-touch-icon.png` (iPhone) e `site.webmanifest`. O navegador guarda o ícone em cache por muito tempo: para ver a mudança, feche e abra a aba ou use Cmd+Shift+R. Se trocar o ícone de novo, aumente o número em `?v=2` nos links.
