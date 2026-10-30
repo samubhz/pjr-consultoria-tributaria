@@ -49,3 +49,7 @@ Pasta `artigos/` com a listagem e 6 artigos (split payment, cClassTrib, constru�
 - **Fonte própria:** Carlito (equivalente ao Calibri) em `assets/fonts/`, em WOFF2 reduzido (~40 KB cada). O site não chama mais o Google Fonts (mais rápido e sem dados enviados a terceiros). Licença: SIL OFL, ver `assets/fonts/LEIA-ME.txt`.
 - **Checklist em PDF:** `checklist-reforma-tributaria-PJR.pdf` (2 páginas, identidade da PJR). Está ligado ao cartão de pontuação do checklist, ao rodapé e aos artigos. Se mudar as perguntas do checklist, o PDF precisa ser refeito.
 - **WhatsApp por página:** nos artigos, o botão flutuante já leva uma mensagem com o título do artigo. Há também botões de compartilhar (WhatsApp, LinkedIn e copiar link).
+
+## Botões de compartilhar na página principal
+Aparecem em 4 momentos: abaixo do cronograma ("Envie o cronograma a um colega"), ao lado do checklist ("Indique o checklist"), em uma faixa depois das dúvidas ("Conhece alguém que também precisa se preparar?") e no rodapé. Cada um monta a mensagem com o endereço atual do site (funciona também com domínio próprio) e abre WhatsApp, LinkedIn ou copia o link; em celulares aparece o botão "Compartilhar" do próprio aparelho.
+Importante (OAB): não ofereça brinde, desconto ou vantagem por indicação. Isso poderia ser entendido como captação de clientela.

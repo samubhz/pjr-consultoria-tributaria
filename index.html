@@ -549,6 +549,23 @@ section{padding:104px 0}
 .post p{font-size:.95rem;color:var(--ink-soft);margin:0}
 .post .more{margin-top:auto;padding-top:10px;font-weight:700;color:var(--green)}
 @media(max-width:980px){.posts{grid-template-columns:1fr;max-width:560px;margin-inline:auto}}
+/* compartilhar */
+.share{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px;font-size:.92rem;margin-top:22px}
+.share>span{color:var(--ink-soft);font-weight:700;letter-spacing:.03em}
+.share a,.share button{font:inherit;font-size:.9rem;font-weight:700;color:var(--green);background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 16px;text-decoration:none;cursor:pointer;transition:background-color .2s,border-color .2s,transform .15s var(--ease)}
+.share button[hidden]{display:none}
+.share a:hover,.share button:hover{border-color:var(--gold);background:#FBF2DE}
+.share a:active,.share button:active{transform:scale(.97)}
+.share.dark>span{color:#B9CFCD}
+.share.dark a,.share.dark button{background:transparent;color:#D6E3E1;border-color:rgba(255,255,255,.28)}
+.share.dark a:hover,.share.dark button:hover{border-color:var(--gold-bright);background:rgba(255,255,255,.06)}
+.share-sec{padding:64px 0;background:var(--paper)}
+.share-cta{background:var(--green-deep);color:#fff;border-radius:10px;padding:36px 40px;display:flex;flex-wrap:wrap;gap:22px 44px;align-items:center;justify-content:space-between;border-top:3px solid var(--gold-bright)}
+.share-cta h2{color:#fff;font-size:1.6rem;margin:0 0 .3em}
+.share-cta p{color:#C9D9D7;margin:0;max-width:52ch}
+.share-cta .share{margin-top:0}
+@media(max-width:700px){.share-cta{padding:28px 24px}}
+@media print{.share,.share-sec{display:none!important}}
 /* faq */
 .faq{max-width:860px;margin:0 auto;border-top:1px solid var(--line)}
 .faq details{border-bottom:1px solid var(--line)}
@@ -769,6 +786,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--gold-bright)}
       </article>
     </div>
     <div class="tl2-cta"><p>Fundamento: Emenda Constitucional 132/2023 e Lei Complementar 214/2025. Confira sempre a regulamentação vigente.</p><a href="#checklist">Veja em que etapa está a sua empresa <svg class="icon"><use href="#i-arrow"/></svg></a></div>
+    <div class="share " data-text="Veja o cronograma da Reforma Tributária (IBS e CBS) que a PJR preparou:" data-hash="#o-que-muda"><span>Envie o cronograma a um colega:</span><button type="button" data-native hidden>Compartilhar</button><a data-share="wa" href="https://wa.me/?text=Veja%20o%20cronograma%20da%20Reforma%20Tribut%C3%A1ria%20%28IBS%20e%20CBS%29%20que%20a%20PJR%20preparou%3A%20https%3A//samubhz.github.io/pjr-consultoria-tributaria/%23o-que-muda" rel="noopener" target="_blank">WhatsApp</a><a data-share="li" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//samubhz.github.io/pjr-consultoria-tributaria/%23o-que-muda" rel="noopener" target="_blank">LinkedIn</a><button type="button" data-copy>Copiar link</button></div>
   </div>
 </section>
 
@@ -847,6 +865,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--gold-bright)}
           <a class="btn btn-ghost" href="#contato" style="margin-top:10px">Conversar sobre os resultados</a>
         </div>
         <p class="note rv">Este checklist é material informativo, genérico e não constitui consultoria nem parecer. A situação de cada empresa exige análise individual.</p>
+        <div class="share " data-text="Este checklist de preparação para a Reforma Tributária (IBS e CBS) pode ajudar a sua empresa:" data-hash="#checklist"><span>Indique o checklist:</span><button type="button" data-native hidden>Compartilhar</button><a data-share="wa" href="https://wa.me/?text=Este%20checklist%20de%20prepara%C3%A7%C3%A3o%20para%20a%20Reforma%20Tribut%C3%A1ria%20%28IBS%20e%20CBS%29%20pode%20ajudar%20a%20sua%20empresa%3A%20https%3A//samubhz.github.io/pjr-consultoria-tributaria/%23checklist" rel="noopener" target="_blank">WhatsApp</a><a data-share="li" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//samubhz.github.io/pjr-consultoria-tributaria/%23checklist" rel="noopener" target="_blank">LinkedIn</a><button type="button" data-copy>Copiar link</button></div>
       </aside>
     </div>
   </div>
@@ -957,6 +976,17 @@ footer a{text-decoration:none}footer a:hover{color:var(--gold-bright)}
   </div>
 </section>
 
+<!-- INDIQUE -->
+<section class="share-sec" aria-labelledby="h-share">
+  <div class="container">
+    <div class="share-cta rv">
+      <div><h2 id="h-share">Conhece alguém que também precisa se preparar?</h2>
+      <p>A Reforma Tributária atinge empresas de todos os setores. Se este conteúdo foi útil, compartilhe com um sócio, um colega ou um contador.</p></div>
+      <div class="share dark" data-text="Achei este site da PJR sobre a Reforma Tributária e lembrei de você:" data-hash=""><span>Compartilhar:</span><button type="button" data-native hidden>Compartilhar</button><a data-share="wa" href="https://wa.me/?text=Achei%20este%20site%20da%20PJR%20sobre%20a%20Reforma%20Tribut%C3%A1ria%20e%20lembrei%20de%20voc%C3%AA%3A%20https%3A//samubhz.github.io/pjr-consultoria-tributaria/" rel="noopener" target="_blank">WhatsApp</a><a data-share="li" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//samubhz.github.io/pjr-consultoria-tributaria/" rel="noopener" target="_blank">LinkedIn</a><button type="button" data-copy>Copiar link</button></div>
+    </div>
+  </div>
+</section>
+
 <!-- SOBRE -->
 <section class="bg-paper2 gf gf-g br" id="sobre">
   <div class="container about">
@@ -1013,6 +1043,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--gold-bright)}
       <div>
         <img src="assets/logo-pjr-white.png" alt="PJR Consultoria Tributária" width="104" height="54" loading="lazy">
         <p>Consultoria tributária voltada à decisão: entender a operação, desenhar os caminhos e implantá-los com segurança.</p>
+        <div class="share dark" data-text="Conheça a PJR Consultoria Tributária:" data-hash=""><span>Compartilhar o site:</span><button type="button" data-native hidden>Compartilhar</button><a data-share="wa" href="https://wa.me/?text=Conhe%C3%A7a%20a%20PJR%20Consultoria%20Tribut%C3%A1ria%3A%20https%3A//samubhz.github.io/pjr-consultoria-tributaria/" rel="noopener" target="_blank">WhatsApp</a><a data-share="li" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//samubhz.github.io/pjr-consultoria-tributaria/" rel="noopener" target="_blank">LinkedIn</a><button type="button" data-copy>Copiar link</button></div>
       </div>
       <div><h4>Navegação</h4><ul><li><a href="#o-que-muda">O que muda</a></li><li><a href="#checklist">Checklist</a></li><li><a href="#servicos">Áreas de atuação</a></li><li><a href="#glossario">Glossário</a></li><li><a href="artigos/">Artigos</a></li><li><a href="#faq">Perguntas frequentes</a></li><li><a href="#contato">Contato</a></li><li><a href="checklist-reforma-tributaria-PJR.pdf" download>Checklist em PDF</a></li><li><a href="privacidade.html">Política de privacidade</a></li></ul></div>
       <div><h4>Contato</h4><ul><li><a href="mailto:reinaldo@pauloteodoro.adv.br">reinaldo@pauloteodoro.adv.br</a></li><li><a href="tel:+5531987228207">(31) 98722-8207</a></li><li>Reinaldo Lage · OAB/MG 106.499</li></ul></div>
@@ -1111,6 +1142,25 @@ footer a{text-decoration:none}footer a:hover{color:var(--gold-bright)}
     hs.addEventListener("focusin", function(){ paused=true; });
     hs.addEventListener("focusout", function(){ paused=false; });
     if("IntersectionObserver" in window) new IntersectionObserver(function(es){ seen=es[0].isIntersecting; }).observe(hs);
+  })();
+
+  // compartilhar: usa o endereço atual (funciona também com domínio próprio)
+  (function(){
+    var base = location.origin + location.pathname;
+    document.querySelectorAll(".share").forEach(function(box){
+      var text = box.getAttribute("data-text") || "", url = base + (box.getAttribute("data-hash") || "");
+      var wa = box.querySelector('[data-share="wa"]'), li = box.querySelector('[data-share="li"]');
+      if(wa) wa.href = "https://wa.me/?text=" + encodeURIComponent(text + " " + url);
+      if(li) li.href = "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(url);
+      var nat = box.querySelector("[data-native]");
+      if(nat && navigator.share){ nat.hidden = false; nat.addEventListener("click", function(){ navigator.share({title: document.title, text: text, url: url}).catch(function(){}); }); }
+      var cp = box.querySelector("[data-copy]");
+      if(cp) cp.addEventListener("click", function(){
+        var done = function(){ cp.textContent = "Link copiado"; setTimeout(function(){ cp.textContent = "Copiar link"; }, 2200); };
+        if(navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(done, function(){ window.prompt("Copie o link:", url); });
+        else window.prompt("Copie o link:", url);
+      });
+    });
   })();
 
   // "Hoje" na régua do cronograma
