@@ -266,15 +266,51 @@ section{padding:104px 0}
 @media(max-width:1000px){.seg{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.seg{grid-template-columns:1fr}}
 
-/* timeline */
-.tl{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
-.tl::before{content:"";position:absolute;left:8%;right:8%;top:34px;height:4px;background:linear-gradient(90deg,var(--green-mid),var(--gold-bright));border-radius:4px}
-.tl article{position:relative;text-align:center;padding:0 16px}
-.tl .dot{width:68px;height:68px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;margin:0 auto 20px;font-weight:700;font-size:1.05rem;border:6px solid var(--paper-2);box-shadow:0 4px 14px rgba(15,43,42,.18);position:relative}
-.tl article:nth-child(2) .dot{background:var(--green-mid)}.tl article:nth-child(3) .dot{background:var(--gold-bright);color:#12302F}.tl article:nth-child(4) .dot{background:var(--green-deep)}
-.tl .dot.sm{font-size:.8rem;white-space:nowrap;letter-spacing:-.02em}
-.tl h3{font-size:1.2rem}.tl p{color:var(--ink-soft);font-size:.96rem;margin:0}
-@media(max-width:860px){.tl{grid-template-columns:1fr;gap:30px}.tl::before{display:none}.tl article{display:grid;grid-template-columns:68px 1fr;column-gap:18px;row-gap:2px;text-align:left;align-items:start;padding:0}.tl .dot{margin:0;grid-row:1/3}.tl h3{margin:6px 0 0}.tl p{margin:0}}
+/* timeline infográfico */
+.tl2{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.tl2-rail{position:absolute;left:12.5%;right:12.5%;top:35px;height:6px;border-radius:6px;background:linear-gradient(90deg,var(--green-mid),var(--gold-bright) 62%,var(--green-deep))}
+.tl2-today{position:absolute;top:-34px;left:12.5%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center}
+.tl2-today b{background:var(--gold-bright);color:#12302F;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;padding:5px 11px;border-radius:999px;white-space:nowrap;box-shadow:0 6px 16px rgba(15,43,42,.22)}
+.tl2-today i{width:2px;height:30px;background:var(--gold)}
+.tl2-today::after{content:"";width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--gold);margin-top:-2px}
+.tl2 article{position:relative;display:flex;flex-direction:column;align-items:center}
+.tl2-node{width:76px;height:76px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:1.05rem;color:#fff;background:var(--green);border:6px solid var(--paper-2);box-shadow:0 6px 18px rgba(15,43,42,.2);position:relative;z-index:2;text-align:center;line-height:1.05}
+.tl2-node.sm{font-size:.78rem;letter-spacing:-.02em}
+.tl2-stem{width:2px;height:26px;background:var(--gold)}
+.tl2-card{flex:1;width:100%;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 10px 28px rgba(15,43,42,.08);display:flex;flex-direction:column;transition:translate .25s var(--ease),box-shadow .25s var(--ease)}
+@media(hover:hover) and (pointer:fine){.tl2-card:hover{translate:0 -4px;box-shadow:0 18px 40px rgba(15,43,42,.14)}}
+.tl2-card header{padding:12px 20px;font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:var(--green)}
+.tl2-body{padding:22px 22px 26px;display:flex;flex-direction:column;gap:16px;flex:1}
+.tl2-stat b{display:block;font-size:1.9rem;line-height:1.05;color:var(--green-deep);letter-spacing:-.02em}
+.tl2-stat small{display:block;margin-top:6px;color:var(--ink-soft);font-size:.9rem;line-height:1.35}
+.tl2-body ul{list-style:none;margin:0;padding:14px 0 0;border-top:1px solid var(--line);display:grid;gap:10px}
+.tl2-body li{display:flex;gap:10px;align-items:flex-start;font-size:.93rem;color:var(--ink-soft);line-height:1.4}
+.tl2-body li .icon{color:var(--gold);margin-top:.28em;font-size:.85rem}
+.tl2-bars{display:flex;align-items:flex-end;gap:8px;height:92px}
+.tl2-bars span{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:4px;height:100%}
+.tl2-bars i{display:block;width:100%;height:var(--h);min-height:22px;background:linear-gradient(180deg,var(--gold-bright),var(--gold));border-radius:6px 6px 2px 2px;font-style:normal;font-size:.72rem;font-weight:700;color:#12302F;text-align:center;padding-top:3px}
+.tl2-bars em{font-style:normal;font-size:.7rem;color:var(--ink-soft);letter-spacing:.04em}
+.tl2 .c2 .tl2-node,.tl2 .c2 header{background:var(--green-mid)}
+.tl2 .c3 .tl2-node,.tl2 .c3 header{background:var(--gold-bright);color:#12302F}
+.tl2 .c4 .tl2-node,.tl2 .c4 header{background:var(--green-deep)}
+.tl2-cta{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;justify-content:space-between;margin-top:46px;padding:20px 26px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:8px}
+.tl2-cta p{margin:0;color:var(--ink-soft);font-size:.92rem}
+.tl2-cta a{font-weight:700;color:var(--green);text-decoration:none;display:inline-flex;gap:8px;align-items:center}
+.tl2-cta a:hover{color:var(--gold-ink)}
+.js .tl2-rail{transform:scaleX(0);transform-origin:left;transition:transform 1s var(--ease)}
+.js .tl2.in .tl2-rail{transform:none}
+.js .tl2-today{opacity:0;transition:opacity .5s 1s}
+.js .tl2.in .tl2-today{opacity:1}
+@media(max-width:980px){
+  .tl2{grid-template-columns:1fr;gap:26px;padding-left:0}
+  .tl2-rail{left:37px;right:auto;top:38px;bottom:38px;width:6px;height:auto;background:linear-gradient(180deg,var(--green-mid),var(--gold-bright) 62%,var(--green-deep))}
+  .js .tl2-rail{transform:scaleY(0);transform-origin:top}
+  .tl2-today{display:none}
+  .tl2 article{display:grid;grid-template-columns:76px 1fr;column-gap:18px;align-items:start}
+  .tl2-node{grid-row:1}
+  .tl2-stem{display:none}
+  .tl2-card{grid-column:2;grid-row:1}
+}
 
 /* pontos */
 .points{display:grid;grid-template-columns:repeat(3,1fr);gap:56px 44px}
@@ -527,13 +563,39 @@ footer a{text-decoration:none}footer a:hover{color:var(--gold-bright)}
       <h2>A reforma já está valendo, e tem data para cada etapa</h2>
       <p class="lead">2026 é ano de ensaio. As decisões que protegem a margem precisam ser tomadas antes de a conta chegar.</p>
     </div>
-    <div class="tl io">
-      <article class="rv"><div class="dot">2026</div><h3>Ano-teste</h3><p>CBS de 0,9% e IBS de 0,1% destacados no documento fiscal, sem recolhimento efetivo.</p></article>
-      <article class="rv"><div class="dot">2027</div><h3>CBS integral</h3><p>Extinção de PIS e Cofins. A não cumulatividade plena passa a valer de fato.</p></article>
-      <article class="rv"><div class="dot sm">2029-32</div><h3>Transição do ICMS e ISS</h3><p>Redução gradual (10%, 20%, 30% e 40%) e queda proporcional dos benefícios estaduais.</p></article>
-      <article class="rv"><div class="dot">2033</div><h3>Sistema pleno</h3><p>Extinção do ICMS e do ISS. Os benefícios fiscais estaduais deixam de existir.</p></article>
+    <div class="tl2 io" id="tl2">
+      <div class="tl2-rail" aria-hidden="true"></div>
+      <div class="tl2-today" id="tl2-today" aria-hidden="true"><b id="tl2-today-l">Hoje</b><i></i></div>
+      <article class="rv c1">
+        <div class="tl2-node">2026</div><div class="tl2-stem"></div>
+        <div class="tl2-card"><header>Fase 1 · Ensaio</header><div class="tl2-body">
+          <div class="tl2-stat"><b>0,9% + 0,1%</b><small>CBS e IBS destacados nos documentos fiscais</small></div>
+          <ul><li><svg class="icon"><use href="#i-check"/></svg><span>Sem recolhimento efetivo: é o ano-teste.</span></li><li><svg class="icon"><use href="#i-check"/></svg><span>Momento de testar documentos, cadastros e sistemas.</span></li></ul>
+        </div></div>
+      </article>
+      <article class="rv c2">
+        <div class="tl2-node">2027</div><div class="tl2-stem"></div>
+        <div class="tl2-card"><header>Fase 2 · CBS plena</header><div class="tl2-body">
+          <div class="tl2-stat"><b>CBS integral</b><small>PIS e Cofins deixam de existir</small></div>
+          <ul><li><svg class="icon"><use href="#i-check"/></svg><span>A não cumulatividade plena passa a valer de fato.</span></li><li><svg class="icon"><use href="#i-check"/></svg><span>O crédito depende do documento correto e do pagamento do tributo pelo fornecedor.</span></li></ul>
+        </div></div>
+      </article>
+      <article class="rv c3">
+        <div class="tl2-node sm">2029-32</div><div class="tl2-stem"></div>
+        <div class="tl2-card"><header>Fase 3 · Transição</header><div class="tl2-body">
+          <div class="tl2-bars" role="img" aria-label="Redução do ICMS e do ISS: 10% em 2029, 20% em 2030, 30% em 2031 e 40% em 2032"><span><i style="--h:25%">10%</i><em>2029</em></span><span><i style="--h:50%">20%</i><em>2030</em></span><span><i style="--h:75%">30%</i><em>2031</em></span><span><i style="--h:100%">40%</i><em>2032</em></span></div>
+          <ul><li><svg class="icon"><use href="#i-check"/></svg><span>Redução gradual do ICMS e do ISS.</span></li><li><svg class="icon"><use href="#i-check"/></svg><span>Os benefícios fiscais estaduais caem na mesma proporção.</span></li></ul>
+        </div></div>
+      </article>
+      <article class="rv c4">
+        <div class="tl2-node">2033</div><div class="tl2-stem"></div>
+        <div class="tl2-card"><header>Fase 4 · Sistema pleno</header><div class="tl2-body">
+          <div class="tl2-stat"><b>IBS + CBS</b><small>ICMS e ISS extintos</small></div>
+          <ul><li><svg class="icon"><use href="#i-check"/></svg><span>Fim do ICMS e do ISS.</span></li><li><svg class="icon"><use href="#i-check"/></svg><span>Os benefícios fiscais estaduais deixam de existir.</span></li></ul>
+        </div></div>
+      </article>
     </div>
-    <p class="center" style="margin-top:40px;color:var(--ink-soft);font-size:.88rem">Fundamento: Emenda Constitucional 132/2023 e Lei Complementar 214/2025. Confira sempre a regulamentação vigente.</p>
+    <div class="tl2-cta"><p>Fundamento: Emenda Constitucional 132/2023 e Lei Complementar 214/2025. Confira sempre a regulamentação vigente.</p><a href="#checklist">Veja em que etapa está a sua empresa <svg class="icon"><use href="#i-arrow"/></svg></a></div>
   </div>
 </section>
 
@@ -824,6 +886,19 @@ footer a{text-decoration:none}footer a:hover{color:var(--gold-bright)}
     });
   }
   window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+  // "Hoje" na régua do cronograma
+  (function(){
+    var pin=document.getElementById("tl2-today"); if(!pin) return;
+    var d=new Date(), y=d.getFullYear()+(d-new Date(d.getFullYear(),0,1))/(365.25*864e5);
+    var yrs=[2026,2027,2029,2033], pos=[12.5,37.5,62.5,87.5], x=null;
+    if(y<yrs[0]) x=pos[0];
+    else for(var i=0;i<3;i++){ if(y>=yrs[i] && y<=yrs[i+1]){ x=pos[i]+(y-yrs[i])/(yrs[i+1]-yrs[i])*(pos[i+1]-pos[i]); break; } }
+    if(x===null){ pin.style.display="none"; return; }
+    pin.style.left=x+"%";
+    var m=["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
+    document.getElementById("tl2-today-l").textContent="Hoje · "+m[d.getMonth()]+"/"+d.getFullYear();
+  })();
 
   // formulário
   var f = document.getElementById("form"), ok = document.getElementById("msgok");
