@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://samubhz.github.io/pjr-consultoria-tributaria/</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://samubhz.github.io/pjr-consultoria-tributaria/artigos/</loc><lastmod>2026-10-30</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://samubhz.github.io/pjr-consultoria-tributaria/artigos/split-payment-reforma-tributaria.html</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://samubhz.github.io/pjr-consultoria-tributaria/artigos/cclasstrib-classificacao-tributaria.html</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://samubhz.github.io/pjr-consultoria-tributaria/artigos/reforma-tributaria-construcao-civil-contratos.html</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://samubhz.github.io/pjr-consultoria-tributaria/privacidade.html</loc><lastmod>2026-10-30</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>
