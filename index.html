@@ -455,6 +455,19 @@ footer a{text-decoration:none}footer a:hover{color:var(--gold-bright)}
 .js .wa{opacity:0;transform:translateY(14px) scale(.9);pointer-events:none}
 .js .wa.show{opacity:1;transform:none;pointer-events:auto}
 
+/* carrossel do topo (setores) */
+.hero-slides{width:100%}
+.hero-slides .photo{position:relative;aspect-ratio:1/1;background:var(--green-deep)}
+.hero-slides .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.05);transition:opacity .9s var(--ease),transform 7s linear}
+.hero-slides:not(.rot) .photo img:first-child{opacity:1;transform:none}
+.hero-slides .photo img.on{opacity:1;transform:none}
+.slide-dots{position:absolute;right:14px;top:14px;display:flex;gap:6px;z-index:3}
+.slide-dots button{position:relative;width:26px;height:6px;border-radius:4px;border:0;padding:0;background:rgba(255,255,255,.5);cursor:pointer;transition:background-color .2s,width .25s var(--ease)}
+.slide-dots button::after{content:"";position:absolute;inset:-12px -3px}
+.slide-dots button[aria-current="true"]{background:var(--gold-bright);width:40px}
+.frame figcaption span{display:block;font-size:.82rem;color:var(--ink-soft)}
+@media(hover:hover) and (pointer:fine){.slide-dots button:hover{background:#fff}}
+
 /* movimento (só quando o visitante não pede movimento reduzido: classe .js) */
 @keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 @keyframes clipIn{from{clip-path:inset(0 0 100% 0 round 6px)}to{clip-path:inset(0 round 6px)}}
@@ -519,9 +532,9 @@ footer a{text-decoration:none}footer a:hover{color:var(--gold-bright)}
         <a class="btn btn-ghost" href="#contato">Falar com a PJR</a>
       </div>
     </div>
-    <figure class="frame" style="margin-block:0">
-      <div class="photo"><img src="assets/hero-escritorio.jpg" alt="Mesa de escritório de advocacia com contrato, caneta-tinteiro e livros jurídicos" width="960" height="1200"></div>
-      <figcaption><b>Consultivo e contencioso</b>Atuação tributária orientada à decisão da empresa.</figcaption>
+    <figure class="frame hero-slides" id="hs" style="margin-block:0" aria-roledescription="carrossel" aria-label="Setores atendidos pela PJR">
+      <div class="photo"><img src="assets/hero-transporte.jpg" alt="Caminhão aberto sendo descarregado em um terminal de cargas ao entardecer, com avião de carga no céu" data-t="Transporte e logística" data-d="CT-e, frota, pedágio e crédito sobre insumos." width="1000" height="1000" decoding="async"><img src="assets/hero-construcao.jpg" alt="Obra de edifício residencial com guindastes ao entardecer" data-t="Construção civil" data-d="Contratos longos, reequilíbrio e crédito da obra." width="1000" height="1000" decoding="async"><img src="assets/hero-ti.jpg" alt="Dois profissionais de tecnologia analisando código em monitores, com data center ao fundo" data-t="Tecnologia" data-d="Forma de preço, crédito do cliente e fluxo de caixa." width="1000" height="1000" decoding="async"><img src="assets/hero-servicos.jpg" alt="Equipe de profissionais de serviços analisando um tablet e plantas em um saguão moderno" data-t="Serviços" data-d="Saúde, engenharia e outros: preço e crédito do cliente." width="1000" height="1000" decoding="async"><div class="slide-dots" role="group" aria-label="Escolher setor"><button type="button" aria-label="Ver setor: Transporte e logística"></button><button type="button" aria-label="Ver setor: Construção civil"></button><button type="button" aria-label="Ver setor: Tecnologia"></button><button type="button" aria-label="Ver setor: Serviços"></button></div></div>
+      <figcaption aria-live="off"><b id="hs-t">Transporte e logística</b><span id="hs-d">CT-e, frota, pedágio e crédito sobre insumos.</span></figcaption>
     </figure>
   </div>
 </div>
@@ -886,6 +899,33 @@ footer a{text-decoration:none}footer a:hover{color:var(--gold-bright)}
     });
   }
   window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+  // carrossel do topo: ordem aleatória a cada visita, troca a cada 6 s
+  (function(){
+    var hs=document.getElementById("hs"); if(!hs) return;
+    var imgs=[].slice.call(hs.querySelectorAll(".photo img")), dots=[].slice.call(hs.querySelectorAll(".slide-dots button"));
+    var tEl=document.getElementById("hs-t"), dEl=document.getElementById("hs-d"), cap=hs.querySelector("figcaption");
+    var order=imgs.map(function(_,i){return i;});
+    for(var i=order.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)), t=order[i]; order[i]=order[j]; order[j]=t; }
+    var pos=0, paused=false, seen=true;
+    hs.classList.add("rot");
+    function show(k,anim){
+      pos=k; var idx=order[k], im=imgs[idx];
+      imgs.forEach(function(x,n){ x.classList.toggle("on", n===idx); });
+      dots.forEach(function(d,n){ d.setAttribute("aria-current", n===idx ? "true" : "false"); });
+      tEl.textContent=im.getAttribute("data-t"); dEl.textContent=im.getAttribute("data-d");
+      if(anim && motion && cap.animate) cap.animate([{opacity:0,transform:"translateY(8px)"},{opacity:1,transform:"none"}],{duration:450,easing:"cubic-bezier(.22,1,.36,1)"});
+    }
+    show(0,false);
+    dots.forEach(function(d,n){ d.addEventListener("click", function(){ show(order.indexOf(n), true); }); });
+    if(!motion) return;
+    setInterval(function(){ if(!paused && seen && !document.hidden) show((pos+1)%imgs.length, true); }, 6000);
+    hs.addEventListener("mouseenter", function(){ paused=true; });
+    hs.addEventListener("mouseleave", function(){ paused=false; });
+    hs.addEventListener("focusin", function(){ paused=true; });
+    hs.addEventListener("focusout", function(){ paused=false; });
+    if("IntersectionObserver" in window) new IntersectionObserver(function(es){ seen=es[0].isIntersecting; }).observe(hs);
+  })();
 
   // "Hoje" na régua do cronograma
   (function(){
