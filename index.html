@@ -492,6 +492,21 @@ section{padding:104px 0}
 @media(max-width:1000px){.steps{grid-template-columns:repeat(2,1fr);row-gap:34px}}
 @media(max-width:560px){.steps{grid-template-columns:1fr}}
 
+
+/* ebook lead */
+#ebook .eb{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:56px;align-items:center}
+#ebook .eb-cover img{width:100%;height:auto;border-radius:6px;box-shadow:0 30px 60px rgba(0,0,0,.45)}
+#ebook h2{color:#fff}#ebook .eb-txt p{color:#C9D9D7}
+#ebook .eb-list{list-style:none;padding:0;margin:0 0 22px;display:grid;gap:8px;color:#E4EEEC}
+#ebook .eb-list li{padding-left:22px;position:relative}
+#ebook .eb-list li::before{content:"";position:absolute;left:0;top:.6em;width:8px;height:8px;border-radius:50%;background:var(--gold-bright)}
+#ebook form.card{padding:26px;background:#fff;color:var(--ink)}
+#ebook form.card h3{margin:0 0 14px}
+#ebook .fields{grid-template-columns:1fr}
+#ebook .eb-ok{display:none;margin-top:16px}
+#ebook .eb-ok.show{display:block}
+#ebook .eb-ok .btn{width:auto}
+@media(max-width:900px){#ebook .eb{grid-template-columns:1fr;gap:34px}#ebook .eb-cover{max-width:300px}}
 /* checklist */
 .cl-wrap{display:grid;grid-template-columns:1.3fr .7fr;gap:36px;align-items:start}
 .cl-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:0 18px 50px rgba(15,43,42,.08);overflow:hidden}
@@ -685,7 +700,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--gold-bright)}
       <ul>
         <li><a class="link" href="#o-que-muda">O que muda</a></li>
         <li><a class="link" href="#setores">Setores</a></li>
-        <li><a class="link" href="#checklist">Checklist</a></li>
+        <li><a class="link" href="#checklist">Checklist</a></li><li><a class="link" href="#ebook">E-book</a></li>
         <li><a class="link" href="#como-atuamos">Como atuamos</a></li>
         <li><a class="link" href="#glossario">Glossário</a></li>
         <li><a class="link" href="#artigos">Artigos</a></li>
@@ -874,6 +889,31 @@ footer a{text-decoration:none}footer a:hover{color:var(--gold-bright)}
 </section>
 
 <!-- SERVICOS -->
+<section id="ebook" class="dark gf gf-w br" aria-labelledby="h-ebook">
+  <div class="container eb">
+    <div class="eb-cover"><img src="assets/ebook-capa.webp" width="680" height="962" loading="lazy" alt="Capa do e-book Reforma Tributária na prática: guia de preparação para Indústria e Transporte"></div>
+    <div class="eb-txt">
+      <span class="eyebrow">E-book gratuito</span>
+      <h2 id="h-ebook">Reforma Tributária na prática: guia para Indústria e Transporte</h2>
+      <p>35 páginas com exemplos numéricos, checklists e um plano de 90 dias para organizar documentos, créditos, contratos e caixa.</p>
+      <ul class="eb-list"><li>Da nota fiscal ao caixa: classificação, apuração assistida e fornecedores</li><li>Transporte de cargas e indústria: o que muda em cada operação</li><li>Contratos, preço, split payment e plano de 90 dias</li></ul>
+      <form class="card" id="ebform" novalidate>
+        <h3>Receba o e-book</h3>
+        <div class="fields">
+          <div><label for="eb-nome">Nome *</label><input id="eb-nome" name="nome" autocomplete="name" required></div>
+          <div><label for="eb-email">E-mail *</label><input id="eb-email" name="email" type="email" autocomplete="email" required></div>
+          <div><label for="eb-tel">Telefone / WhatsApp *</label><input id="eb-tel" name="tel" type="tel" autocomplete="tel" placeholder="(00) 00000-0000" required></div>
+          <div class="consent"><input type="checkbox" id="eb-lgpd" required><label for="eb-lgpd" style="font-weight:400;color:var(--ink-soft);margin:0;font-size:.84rem">Autorizo o uso dos meus dados para o envio deste material e para contato relacionado, conforme a LGPD e a <a href="privacidade.html">política de privacidade</a>.</label></div>
+        </div>
+        <button class="btn btn-primary" type="submit">Baixar o e-book <svg class="icon"><use href="#i-arrow"/></svg></button>
+        <div class="msg" id="eb-msg" role="status"></div>
+        <div class="eb-ok" id="eb-ok"><p style="color:var(--green);font-weight:600;margin:0 0 10px">Cadastro recebido. Obrigado!</p><a class="btn btn-primary" href="ebook-reforma-tributaria-industria-transporte-PJR.pdf" download id="eb-dl"><svg class="icon"><use href="#i-print"/></svg>Baixar o PDF</a></div>
+      </form>
+      <p class="note" style="margin-top:14px;color:#9FB5B3">Material informativo e genérico; não constitui consultoria, parecer nem promessa de resultado.</p>
+    </div>
+  </div>
+</section>
+
 <section id="servicos" class="dark gf gf-w br">
   <div class="container">
     <div class="head center rv">
@@ -1177,6 +1217,22 @@ footer a{text-decoration:none}footer a:hover{color:var(--gold-bright)}
     var m=["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
     document.getElementById("tl2-today-l").textContent="Hoje · "+m[d.getMonth()]+"/"+d.getFullYear();
   })();
+
+  // e-book (captação de cadastro)
+  var EBOOK_ENDPOINT = ""; // URL do Apps Script (Planilha Google); ver LEIA-ME
+  var ef=document.getElementById("ebform");
+  if(ef){ ef.addEventListener("submit", function(ev){
+    ev.preventDefault();
+    var m=document.getElementById("eb-msg"), nome=ef.nome.value.trim(), mail=ef.email.value.trim(), tel=ef.tel.value.replace(/\D/g,"");
+    function err(t){ m.className="msg show"; m.textContent=t; }
+    if(!nome||!/^\S+@\S+\.\S+$/.test(mail)||tel.length<10){ err("Preencha nome, um e-mail válido e telefone com DDD."); return; }
+    if(!ef.querySelector("#eb-lgpd").checked){ err("É necessário autorizar o uso dos dados."); return; }
+    var btn=ef.querySelector("button[type=submit]"); btn.disabled=true;
+    function ok(){ m.className="msg"; btn.style.display="none"; var o=document.getElementById("eb-ok"); o.className="eb-ok show"; o.querySelector("a").focus(); }
+    if(!EBOOK_ENDPOINT){ ok(); return; }
+    var fd=new URLSearchParams({nome:nome,email:mail,telefone:ef.tel.value.trim(),origem:location.href,consentimento:"sim",data:new Date().toISOString()});
+    fetch(EBOOK_ENDPOINT,{method:"POST",mode:"no-cors",body:fd}).then(ok).catch(function(){ btn.disabled=false; err("Não foi possível concluir agora. Tente novamente em instantes."); });
+  }); }
 
   // formulário
   var f = document.getElementById("form"), ok = document.getElementById("msgok");
