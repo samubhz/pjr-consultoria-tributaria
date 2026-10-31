@@ -17,7 +17,7 @@ p{margin:0 0 1.15em}
 
 header.site{position:sticky;top:0;z-index:50;background:rgba(15,43,42,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.14)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:12px 0}
-.nav img{height:46px;width:auto}
+.nav img{height:52px;width:auto;max-width:62vw}
 .nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
 .nav a.link{color:#D6E3E1;text-decoration:none;font-size:.9rem;font-weight:500;letter-spacing:.03em;padding:6px 0;border-bottom:1px solid transparent}
 .nav a.link:hover,.nav a.link[aria-current]{color:#fff;border-color:var(--gold-bright)}
