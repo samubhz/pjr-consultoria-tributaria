@@ -6,7 +6,7 @@ Pasta `assets/` com imagens, logos, favicon e imagem de compartilhamento.
 ## Antes de publicar (obrigatório)
 1. **Domínio:** hoje o endereço é o do GitHub Pages (`https://samubhz.github.io/pjr-consultoria-tributaria/`). Ao ligar um domínio próprio, troque-o em `index.html` (canonical, Open Graph, JSON-LD), `robots.txt` e `sitemap.xml`.
 2. **Formulário:** em `index.html`, procure `FORM_ENDPOINT` e coloque a URL de um serviço (Formspree, Make, Zapier, Formspark etc.). Enquanto estiver vazio, o envio abre o e-mail do visitante com a mensagem preenchida.
-3. **Contatos:** confira e-mail e telefone (hoje: reinaldo@pauloteodoro.adv.br e (31) 98722-8207; o e-mail ainda usa o domínio do escritório antigo).
+3. **Contatos:** confira e-mail e telefone (hoje: reinaldo@pauloteodoro.adv.br e (31) 4103-0552 (fixo) e (31) 99217-2016 (WhatsApp), ambos do site do Paulo Teodoro; o e-mail ainda usa o domínio do escritório antigo).
 4. **OAB:** submeta o texto à Comissão de Publicidade/Ética da OAB seccional (ou ao responsável do escritório) antes de ir ao ar.
 5. **Política de privacidade:** o formulário cita a LGPD; publique uma página de política de privacidade e linke no rodapé.
 6. **Datas e normas:** o conteúdo reflete a legislação conhecida até outubro de 2026. Revise o texto a cada atualização da regulamentação.
